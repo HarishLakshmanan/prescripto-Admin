@@ -36,6 +36,7 @@ export default function AddDoctor() {
 
       formData.append('image', docImg)
       formData.append('name', name)
+      formData.append('email', email)
       formData.append('password', password)
       formData.append('experience', experience)
       formData.append('fees', Number(fees))
@@ -53,11 +54,20 @@ export default function AddDoctor() {
 
       if(data.success){
         toast.success(data.message)
+        setDocImg(false)
+        setName('')
+        setEmail('')
+        setPassword('')
+        setAddress1('')
+        setAddress2('')
+        setFees('')
+        setAbout('')
       }else{
         toast.error(data.message)
       }
     } catch (error) {
-
+       toast.error(error.message)
+       console.log(error)
     }
   }
 

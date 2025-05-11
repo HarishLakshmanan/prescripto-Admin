@@ -13,11 +13,11 @@ import { Routes, Route } from 'react-router-dom';
 
 export default function App() {
 
-  const {atoken} = useContext(AdminContext)
+  const {aToken} = useContext(AdminContext)
 
 
 
-  return atoken?(
+  return aToken?(
     <div className='bg-[#f6f7fd]'>
       <ToastContainer />
        <Navbar/>
